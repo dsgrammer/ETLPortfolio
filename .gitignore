@@ -1,0 +1,9 @@
+.cache
+config/config.json
+logs/logs.log
+examples/audio_features_1.0.1.py
+examples/favorited_songs_1.0.1.py
+examples/recently_played.py
+src/__pycache__/__init__.cpython-313.pyc
+src/__pycache__/get_bronze_data.cpython-313.pyc
+data/spotify_data.db
