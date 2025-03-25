@@ -7,3 +7,4 @@ examples/recently_played.py
 src/__pycache__/__init__.cpython-313.pyc
 src/__pycache__/get_bronze_data.cpython-313.pyc
 data/spotify_data.db
+data/test.csv

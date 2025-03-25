@@ -44,3 +44,23 @@ class api_request:
                 break
 
         return pd.DataFrame(song_list)
+    
+    def get_recently_played(rpl_df, user):
+        recent_tracks = user.current_user_recently_played(limit=50)
+
+        for idx, item in enumerate(recent_tracks['items']):
+            d = item["track"]
+            track_id = d['id']
+            track_name = d['name']
+            duration_ms = d['duration_ms']
+            explicit = d['explicit']
+            played_at = item['played_at']
+
+            temp_df = pd.DataFrame({'track_id': track_id, 'track_name': track_name, 'duration_ms': duration_ms,
+                                    'explicit': explicit, 'played_at': played_at}, index=['played_at'])
+            temp_df['explicit'] = temp_df['explicit'].astype('boolean')
+            temp_df['played_at'] = temp_df['played_at'].apply(pd.to_datetime)
+
+            rpl_df = pd.concat([rpl_df, temp_df], ignore_index=True)
+
+        return rpl_df
