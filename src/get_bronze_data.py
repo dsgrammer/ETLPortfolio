@@ -10,7 +10,7 @@ class api_request:
         scope = ['user-library-read', 'user-read-recently-played']
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
         user = sp
-
+        
         return user
 
     # Function for getting all the user's saved (favorite) tracks
