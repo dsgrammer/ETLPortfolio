@@ -13,6 +13,9 @@ pythom -m venv .venv
 #install dependencies
 pip install -r requirements.txt
 
+# run
+python main.py
+
 # folder structure
 WorkSpace.
 ├───config

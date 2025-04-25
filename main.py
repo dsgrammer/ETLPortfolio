@@ -24,6 +24,7 @@ def main():
     print(fav_df.head())
     print(fav_df.dtypes)
 
+    # get user's recently played tracks
     rpl_df = pd.DataFrame(columns=["track_id", "track_name", "duration_ms", "explicit", "played_at"])
     rpl_df = api_request.get_recently_played(rpl_df, user)
     rpl_df.to_csv(r'data/test2.csv', encoding='utf-8-sig')
